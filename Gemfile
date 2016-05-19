@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-
+ruby '2.2.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
@@ -46,7 +46,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 # Add Bootstrap
 gem 'bootstrap-sass'
 
-# Add groups for Heroku
+# Add groups for DB stuff
 group :development, :test do
 	# Use sqlite3 as the database for Active Record
 	gem 'sqlite3'
@@ -56,3 +56,6 @@ group :production do
      gem 'pg'
      gem 'rails_12factor'
 end
+
+# Add Devise
+gem 'devise'
