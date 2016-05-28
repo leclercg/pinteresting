@@ -59,3 +59,5 @@ end
 
 # Add Devise
 gem 'devise'
+
+gem 'paperclip', '~> 4.2'
