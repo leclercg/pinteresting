@@ -61,3 +61,4 @@ end
 gem 'devise'
 
 gem 'paperclip', '~> 4.2'
+gem 'aws-sdk', '< 2.0'
