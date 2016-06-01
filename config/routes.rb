@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :pins
   devise_for :users
+  resources :users, only: [:show, :index]
   root 'pins#index'
   get "about" => "pages#about"
   get 'tags/:tag', to: 'pins#index', as: :tag
