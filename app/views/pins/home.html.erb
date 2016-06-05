@@ -1,0 +1,24 @@
+<%= render 'pages/home' unless user_signed_in? %>
+
+<p><div id="tags">
+  <div class="panel panel-default">
+    <div class="panel-heading">Popular tags</div>
+    <div class="panel-body">
+      <% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
+        <%= link_to tag.name, tag_path(tag.name), :class => css_class %>
+      <% end %>
+    </div>
+  </div>
+</div></p>
+
+
+
+<p><div id="pins">
+  <div class="panel panel-default">
+      <div class="panel-body">
+        <% @pins.each do |pin| %>
+          <%= link_to image_tag(pin.image.url(:thumb), :class => "img-rounded"), pin %>
+        <% end %>
+      </div>
+  </div>
+</div></p>

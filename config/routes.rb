@@ -2,9 +2,10 @@ Rails.application.routes.draw do
   resources :pins
   devise_for :users, controllers: {registrations: "users/registrations"}
   resources :users, only: [:show, :index]
-  root 'pins#index'
+  root 'pins#home'
   get "about" => "pages#about"
   get 'tags/:tag', to: 'pins#index', as: :tag
+  get 'gallery', to: 'pins#index'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

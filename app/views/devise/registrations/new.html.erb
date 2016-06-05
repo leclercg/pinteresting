@@ -22,9 +22,11 @@
         <%= f.password_field :password, class: "form-control" %>
       </div>
 
-      <div class="form-group">
-        <%= recaptcha_tags %>
-      </div>
+      <% if Rails.env.production? %>
+        <div class="form-group">
+          <%= recaptcha_tags %>
+        </div>
+      <% end %>
 
       <div class="form-group">
         <%= f.submit "Sign up", class: "btn btn-primary" %>

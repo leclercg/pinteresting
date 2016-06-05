@@ -7,6 +7,7 @@
         <%= link_to image_tag(@pin.image(:medium)), @pin.image.url(:original) %>
       </div>
       <div class="panel-body">
+        <p>Added <%= @pin.created_at.in_time_zone("Eastern Time (US & Canada)").strftime("%F %T %Z") %></p>
         <p><%= @pin.description %></p>
         <p><strong><%= link_to @pin.user.name, @pin.user if @pin.user %></strong></p>
         <p><% @pin.tags.each do |tag| %>

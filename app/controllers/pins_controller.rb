@@ -13,6 +13,12 @@ class PinsController < ApplicationController
     @pin_count = Pin.count
   end
 
+  def home
+    @pins = Pin.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 24)
+    @tags = Pin.tag_counts_on(:tags)
+    @pin_count = Pin.count
+  end
+
   def tag_cloud
     Pin.find(:first).pins.tag_counts_on(:tags)
     @tags = Pin.tag_counts_on(:tags)
