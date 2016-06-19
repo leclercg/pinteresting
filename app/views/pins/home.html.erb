@@ -1,24 +1,40 @@
 <%= render 'pages/home' unless user_signed_in? %>
 
-<p><div id="tags">
-  <div class="panel panel-default">
-    <div class="panel-heading">Popular tags</div>
-    <div class="panel-body">
-      <% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
-        <%= link_to tag.name, tag_path(tag.name), :class => css_class %>
-      <% end %>
-    </div>
-  </div>
-</div></p>
 
 
-
-<p><div id="pins">
-  <div class="panel panel-default">
+<div class="row">
+  <div id="tags" class="col-xs-6 col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">Popular tags</div>
       <div class="panel-body">
-        <% @pins.each do |pin| %>
-          <%= link_to image_tag(pin.image.url(:thumb), :class => "img-rounded"), pin %>
+        <% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %>
+          <%= link_to tag.name, tag_path(tag.name), :class => css_class %>
         <% end %>
       </div>
+    </div>
   </div>
-</div></p>
+
+  <div id="stats" class="col-xs-6 col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">Statistics</div>
+      <div class="panel-body">
+        <p>Number of tags: <%= @tag_count %></p>
+        <p>Number of images: <%= @pin_count %></p>
+        <p>Number of users: <%= @user_count %></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div id="pins" class="col-xs-6">
+    <div class="panel panel-default">
+        <div class="panel-body">
+          <% @pins.each do |pin| %>
+            <%= link_to image_tag(pin.image.url(:thumb), :class => "img-rounded"), pin %>
+          <% end %>
+        </div>
+    </div>
+  </div>
+</div>
