@@ -65,3 +65,4 @@ gem 'will_paginate', '~> 3.0.5'
 gem 'will_paginate-bootstrap'
 gem 'acts-as-taggable-on'
 gem 'recaptcha', require: "recaptcha/rails"
+gem 'time_ago_string'
