@@ -15,7 +15,7 @@ class PinsController < ApplicationController
 
   def home
     @pins = Pin.all.order("created_at DESC").limit(20)
-    @tags = Pin.tag_counts_on(:tags).limit(10)
+    @tags = Pin.tag_counts_on(:tags).limit(60)
     @pin_count = Pin.count
     @user_count = User.count
     @tag_count = Pin.tag_counts_on(:tags).count
