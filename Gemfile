@@ -56,7 +56,7 @@ group :production do
 end
 
 # Add Devise
-gem 'devise', '~> 3.5', '>= 3.5.10'
+gem 'devise', '>= 3.5.10'
 
 gem 'paperclip', '~> 4.2'
 gem 'aws-sdk', '< 2.0'
