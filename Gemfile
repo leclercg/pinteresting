@@ -1,4 +1,4 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 ruby '2.2.4'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
@@ -57,6 +57,9 @@ end
 
 # Add Devise
 gem 'devise', '~> 3.5', '>= 3.5.10'
+
+# Add Lightbox
+gem 'lightbox2-rails'
 
 gem 'paperclip', '~> 4.2'
 gem 'aws-sdk', '< 2.0'
