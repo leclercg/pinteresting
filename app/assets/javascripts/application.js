@@ -13,6 +13,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require bootstrap-sprockets
+//= require bootstrap-tagsinput
 //= require lightbox
 //= require_tree .
 //= require masonry/jquery.masonry
