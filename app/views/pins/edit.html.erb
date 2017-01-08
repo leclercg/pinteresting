@@ -1,5 +1,10 @@
 <h1>Editing Pin</h1>
 
+
+<div class="form-group">
+	<%= label :existingImage, "Existing image" %><br/>
+	<%= image_tag(@pin.image.url(:thumb), :class => "img-rounded") %>
+</div>
 <%= render 'form' %>
 
 <%= link_to 'Show', @pin %> |
