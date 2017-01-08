@@ -13,7 +13,7 @@
 
   <div class="form-group">
     <%= f.label :image %>
-    <%= f.file_field :image, class: "form-control" %>
+    <%= f.file_field :image, class: "form-control", 'id'=>'fileUpload' %>
   </div>
   <div class="form-group">
     <%= f.label :description %>
@@ -22,7 +22,11 @@
   <div class="form-group">
     <%= f.label :tags, "Tags" %><br/>
     <%= f.text_field :tag_list, value: @pin.tag_list.to_s , 'class'=>'form-control', 'data-role'=>'tagsinput', 'placeholder'=>'Add tags' %>
-</div>
+  </div>
+  <div class="form-group" id="image-holder-div" style="display:none;">
+    <%= f.label :imagePreview, "Image preview" %>
+    <div id="image-holder"></div>
+  </div>
   <div class="form-group">
     <%= f.submit class: "btn btn-primary" %>
   </div>
