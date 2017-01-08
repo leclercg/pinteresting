@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users, only: [:show, :index]
   root 'pins#home'
   get "about" => "pages#about"
+  get "tags" => "pages#tags"
   get 'tags/:tag', to: 'pins#index', as: :tag
   get 'gallery', to: 'pins#index'
 
