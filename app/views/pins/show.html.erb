@@ -1,6 +1,17 @@
 <div class="row">
   <div class="col-xs-6 col-sm-4" id="PinDetails">
-    <p><%= link_to 'Next', @pin.next_image, id: "next_pin" %> | <%= link_to 'Previous', @pin.previous_image, id: "previous_pin" %></p>
+
+    <p>
+      <% if @pin.next_image != nil %>
+        <%= link_to 'Next', @pin.next_image, id: "next_pin" %>
+      <% else %>
+        Next
+      <% end %> | 
+      <% if @pin.previous_image != nil %>
+        <%= link_to 'Previous', @pin.previous_image, id: "previous_pin" %>
+      <% else %>
+        Previous
+      <% end %></p>
 
     <p>Added <%= time_ago_in_words(@pin.created_at) %> ago</p>
     <p><%= @pin.description %></p>

@@ -12,4 +12,7 @@ class Pin < ActiveRecord::Base
      def previous_image
         self.class.where('id < ?', self.id).order('id desc').first
      end
+     def current_image
+        self.class.where('id = ?', self.id).order('id desc').first
+     end
 end
